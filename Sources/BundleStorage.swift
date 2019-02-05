@@ -8,8 +8,12 @@
 
 import Foundation
 
-class BundleStorage: IStorage{
-    func load<T>(_ type: T.Type, key: String) -> T? where T : Decodable {
+open class BundleStorage: IStorage{
+    public init(){
+        
+    }
+    
+    public func load<T>(_ type: T.Type, key: String) -> T? where T : Decodable {
         if let filePath = Bundle.main.path(forResource: key, ofType: ""),
             let jsonString = try? String(contentsOfFile: filePath),
             let data = jsonString.data(using: .utf8),
@@ -19,8 +23,8 @@ class BundleStorage: IStorage{
         return nil;
     }
     
-    func save<T>(_ value: T, key: String) -> Bool where T : Encodable {
-        Log.error("not supported")
+    public func save<T>(_ value: T, key: String) -> Bool where T : Encodable {
+        assertionFailure("Not supported")
         return false
     }
 }

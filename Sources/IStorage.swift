@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol IStorage {
+public protocol IStorage {
     func load<T:Decodable>(_ type:T.Type, key: String) -> T?
     func save<T:Encodable>(_ value:T, key: String) -> Bool
 }
