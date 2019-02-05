@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'POSwiftStorage'
-  s.version          = '0.1'
+  s.version          = '0.2'
   s.summary          = 'Controller executor'
   s.description      = <<-DESC
   For local storage and settings                      
